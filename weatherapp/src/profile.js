@@ -30,7 +30,9 @@ function Profile() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     // Send updated user data to backend API
     axios.put('api/user', userData)
       .then(response => {
@@ -66,7 +68,7 @@ function Profile() {
                   <input type="password" id="user" class="input-field" name="password" value={userData.password} onChange={handleInputChange} placeholder='Password' />
 
 
-                  <input type="submit" class="input-submit" value="Save" onClick={handleSubmit} />
+                  <button className="input-submit" onClick={handleSubmit}>Save</button>
 
 
                 </div>
@@ -96,7 +98,7 @@ function Profile() {
                   <p id="user" class="input-field">Password: {userData.password}</p>
 
 
-                  <input type="submit" class="input-submit" value="Edit" onClick={() => setEditMode(true)} />
+                  <button className="input-submit" onClick={(event) => { event.preventDefault(); setEditMode(true) }}>Edit</button>
 
 
 

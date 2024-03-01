@@ -48,7 +48,7 @@ function Reg() {
                         </div>
                         <div className="input_box">
 
-                            <input type="text" id="pass" class="input-field" required placeholder="Governorate" />
+                            <input type="text" id="pass" class="input-field" required placeholder="City" />
 
 
 

@@ -11,7 +11,7 @@
 
 body {
 
-    background-image: url("f14181a5128c7eb5085c65aee2732ac6\ \(1\).jpg");
+    background-image: url("image/f14181a5128c7eb5085c65aee2732ac6\ \(1\).jpg");
 
     background-position: center;
 
@@ -380,4 +380,9 @@ input::placeholder {
             transition: top .3s ease, left .3s ease, fill .2s ease .2s;
         }
     }
+}
+
+.rside {
+    background-color: white;
+    width: 500px;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
 import Profile from './profile';
+import Body from './bodyweather';
 
 
 
@@ -22,7 +23,7 @@ function WeatherApp() {
 
 
     return (
-        <div></div>
+        <Body />
 
 
 

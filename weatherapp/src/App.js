@@ -4,6 +4,8 @@ import Login from './Login';
 import Reg from './reg';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WeatherApp from './weatherApp';
+import NavBar from './NavBar';
+import Profile from './profile';
 
 
 
@@ -17,7 +19,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/reg' element={<Reg />} />
-          <Route path='/weatherApp' element={<WeatherApp />} />
+          <Route path='/weatherApp' element={<NavBar />} >
+            <Route path='weather' element={<WeatherApp />} />
+            <Route path='profile' element={<Profile />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
