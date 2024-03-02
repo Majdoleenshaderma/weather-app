@@ -17,13 +17,7 @@ function WeatherApp() {
 
 
     return (
-<<<<<<< Updated upstream
-        <div>
-            <Body/>
-        </div>
-=======
         <Body />
->>>>>>> Stashed changes
     );
 }
 

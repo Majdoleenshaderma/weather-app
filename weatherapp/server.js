@@ -7,14 +7,9 @@ const ejs = require('ejs');
 
 app.use(cors());
 app.set('view engine', 'ejs');
-<<<<<<< Updated upstream
 app.set('views', 'views', 'profile');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-=======
-app.set('views', 'src', 'weatherApp');
-app.use(express.json())
->>>>>>> Stashed changes
 
 const {MongoClient}=require('mongodb')
 
@@ -29,12 +24,9 @@ var bodyParse= require('body-parser')
 var urlEncoded= bodyParse.urlencoded({extended:false})
 
 const { ObjectId } = require('mongodb');
-<<<<<<< Updated upstream
 //const fetch = require('node-fetch');
 
 // const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13';
-=======
->>>>>>> Stashed changes
 
 const options = {
   method: 'GET',
@@ -46,7 +38,6 @@ const options = {
   }
 };
 
-<<<<<<< Updated upstream
 
 app.get('/', function(req, res){
     res.send('start server')
@@ -76,16 +67,6 @@ app.post('/login', async (req, res) => {
 });
 
 
-=======
-app.post('/login', urlEncoded, async(req, res) => {
-    const finduser = await userCollection.findOne({'username': req.body.username, 'password': req.body.password});
-    if (finduser) 
-        res.redirect('/weatherApp');
-    else
-        res.redirect('/rej');
-});
-
->>>>>>> Stashed changes
 app.post('/signup', urlEncoded, async(req, res)=>{
     const userId = new ObjectId();
 
@@ -116,10 +97,7 @@ app.get('/weather', async function(req, res){
 
         const response = await axios.request(optionsWithParams);
         console.log(response.data);
-<<<<<<< Updated upstream
         
-=======
->>>>>>> Stashed changes
      
         for (const day of response.data.forecast.forecastday) {
             await forecastCollection.insertOne({
@@ -159,11 +137,7 @@ app.get('/history', function(req, res){
 })
 
 
-<<<<<<< Updated upstream
 var server= app.listen(9090, function()
-=======
-var server= app.listen(9000, function()
->>>>>>> Stashed changes
 {
     var host = server.address().address
     var port= server.address().port

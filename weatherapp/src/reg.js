@@ -22,23 +22,7 @@ function Reg() {
 
     const onBtnClick = async (event) => {
         event.preventDefault();
-<<<<<<< Updated upstream
-
-        try {
-            console.log(formData); 
-            const response = await axios.post('http://localhost:9090/signup', formData);
-            console.log(response);
-    
-            if (response.status === 200) 
-                navigate('/');
-            else 
-                console.error('register failed');
-        } catch (error) {
-            console.error('Error during registration:', error);
-        }
-=======
         navigate("/Login");
->>>>>>> Stashed changes
     }
 
     return (
@@ -50,18 +34,6 @@ function Reg() {
                             <span> Weather</span>
                         </div>
                         <div className="input_box">
-<<<<<<< Updated upstream
-                            <input type="text" id="user" class="input-field" required placeholder="Username"  name='username' onChange={onInputChange} />
-                        </div>
-                        <div className="input_box">
-                            <input type="email" id="user" class="input-field" required placeholder="Email"  name='email' onChange={onInputChange}/>
-                        </div>
-                        <div className="input_box">
-                            <input type="password" id="pass" class="input-field" required placeholder="Password" name='password' onChange={onInputChange}/>
-                        </div>
-                        <div className="input_box">
-                            <input type="text" id="pass" class="input-field" required placeholder="City" name='region' onChange={onInputChange}/>
-=======
                             <input type="text" id="user" class="input-field" required placeholder="Username"/>
                         </div>
                         <div className="input_box">
@@ -72,7 +44,6 @@ function Reg() {
                         </div>
                         <div className="input_box">
                             <input type="text" id="pass" class="input-field" required placeholder="City"/>
->>>>>>> Stashed changes
                         </div>
                         <div className="input_box">
                             <Link To='./weatherApp.js'></Link>
