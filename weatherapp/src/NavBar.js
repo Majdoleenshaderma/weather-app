@@ -61,7 +61,7 @@ function NavBar() {
                         <Typography
                             variant="h6"
                             noWrap
-                            component="P"
+                            component="a"
                             href=""
                             sx={{
                                 mr: 2,
@@ -131,10 +131,7 @@ function NavBar() {
                         >
                             WeatherApp
                         </Typography>
-                        <div className='search'>
-                            <input type='text' placeholder='Search City' id='box-sear' />
-                            <button id='but-sear' >Search</button>
-                        </div>
+
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (

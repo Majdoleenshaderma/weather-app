@@ -23,7 +23,9 @@ function WeatherApp() {
 
 
     return (
-        <Body />
+        <div>
+<Body/>
+        </div>
 
 
 
