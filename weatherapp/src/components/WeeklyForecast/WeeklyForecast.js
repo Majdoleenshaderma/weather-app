@@ -13,7 +13,6 @@ const WeeklyForecast = ({ data }) => {
 
   const noDataProvided =
     !data ||
-    Object.keys(data).length === 0 ||
     !data.list ||
     data.list.length === 0;
 

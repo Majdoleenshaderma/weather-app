@@ -12,7 +12,7 @@ const dayMonth = getDayMonthFromDate();
 
 const Details = ({ data }) => {
   const noDataProvided =
-    !data || Object.keys(data).length === 0 || data.cod === '404';
+    !data || data.cod === '404';
 
   let content = <ErrorBox flex="1" type="error" />;
 
@@ -48,7 +48,6 @@ const Details = ({ data }) => {
             justifyContent: 'center',
             alignItems: 'center',
             height: '80px',
-
           }}
         >
           <WeatherIconDetail src={weatherIcon(`${data.weather[0].icon}.png`)} />

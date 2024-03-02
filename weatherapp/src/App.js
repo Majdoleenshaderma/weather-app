@@ -12,17 +12,13 @@ import Profile from './profile';
 function App() {
   return (
     <div className="App">
-
-
       <BrowserRouter>
-
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/reg' element={<Reg />} />
           <Route path='/weatherApp' element={<NavBar />} >
             <Route path='weather' element={<WeatherApp />} />
             <Route path='profile' element={<Profile />} />
-
           </Route>
         </Routes>
       </BrowserRouter>

@@ -49,13 +49,17 @@ function NavBar() {
         navigate("/");
         setAnchorElUser(null);
     };
+    const handlehistoryMenu = (event) => {
+        navigate("/history");
+        setAnchorElUser(null);
+    };
+
 
     return (
         <>
             <AppBar position="static" >
                 <Container maxWidth="xl" style={{ background: "#e5e5e5" }}>
                     <Toolbar disableGutters >
-
                         <img src={ImageLink} alt='Logo' width={56} />
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                         <Typography
@@ -172,6 +176,9 @@ function NavBar() {
                                 </MenuItem>
                                 <MenuItem onClick={handleLogoutUserMenu}>
                                     <Typography textAlign="center">Logout</Typography>
+                                </MenuItem>
+                                <MenuItem onClick={handlehistoryMenu}>
+                                    <Typography textAlign="center">history</Typography>
                                 </MenuItem>
                             </Menu>
                         </Box>
