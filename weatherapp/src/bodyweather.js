@@ -167,7 +167,7 @@ function App() {
                 marginBottom: '1rem',
                 marginTop: '1rem',
 
-                backdropFilter: 'blur(80px)',
+                backdropFilter: 'blur(30px)',
 
 
 
