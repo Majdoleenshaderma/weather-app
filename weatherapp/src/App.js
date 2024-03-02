@@ -22,6 +22,7 @@ function App() {
           <Route path='/weatherApp' element={<NavBar />} >
             <Route path='weather' element={<WeatherApp />} />
             <Route path='profile' element={<Profile />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
