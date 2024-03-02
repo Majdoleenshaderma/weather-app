@@ -22,6 +22,7 @@ function Reg() {
 
     const onBtnClick = async (event) => {
         event.preventDefault();
+<<<<<<< Updated upstream
 
         try {
             console.log(formData); 
@@ -35,17 +36,21 @@ function Reg() {
         } catch (error) {
             console.error('Error during registration:', error);
         }
+=======
+        navigate("/Login");
+>>>>>>> Stashed changes
     }
 
     return (
         <div>
             <div className="wrapper" >
-                <form onSubmit={onBtnClick}>
+                <form method="post" action="http://localhost:9000/signup" onSubmit={onBtnClick}>
                     <div className="login_box">
                         <div className="login-header">
                             <span> Weather</span>
                         </div>
                         <div className="input_box">
+<<<<<<< Updated upstream
                             <input type="text" id="user" class="input-field" required placeholder="Username"  name='username' onChange={onInputChange} />
                         </div>
                         <div className="input_box">
@@ -56,6 +61,18 @@ function Reg() {
                         </div>
                         <div className="input_box">
                             <input type="text" id="pass" class="input-field" required placeholder="City" name='region' onChange={onInputChange}/>
+=======
+                            <input type="text" id="user" class="input-field" required placeholder="Username"/>
+                        </div>
+                        <div className="input_box">
+                            <input type="email" id="user" class="input-field" required placeholder="Email"/>
+                        </div>
+                        <div className="input_box">
+                            <input type="password" id="pass" class="input-field" required placeholder="Password"/>
+                        </div>
+                        <div className="input_box">
+                            <input type="text" id="pass" class="input-field" required placeholder="City"/>
+>>>>>>> Stashed changes
                         </div>
                         <div className="input_box">
                             <Link To='./weatherApp.js'></Link>

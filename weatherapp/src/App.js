@@ -1,13 +1,9 @@
-import logo from './logo.svg';
-
 import Login from './Login';
 import Reg from './reg';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WeatherApp from './weatherApp';
 import NavBar from './NavBar';
 import Profile from './profile';
-
-
 
 function App() {
   return (

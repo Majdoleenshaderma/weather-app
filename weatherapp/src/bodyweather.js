@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import { Box, Container, Grid, SvgIcon, Typography } from '@mui/material';
 import Search from './components/Search/Search';
@@ -163,6 +164,106 @@ function App() {
                 {appContent}
             </Grid>
         </Container>
+=======
+import './login.Module.css'
+import React, { useState, useEffect } from 'react'
+import { AsyncPaginate } from 'react-select-async-paginate';
+import {fetchCities} from '../src/api/weather_api'
+
+function Body() {
+    const [country, setCountry] = useState(''); // State variable for country
+    const [error, setError] = useState(null); // State variable for error
+    const [weatherData, setWeatherData] = useState(null);
+
+    const searchWeather = ({ onSearchChange }) =>{
+        const [searchValue, setSearchValue] = useState(null);
+
+        const loadOptions = async (inputValue) => {
+            const citiesList = await fetchCities(inputValue);
+        
+            return {
+              options: citiesList.data.map((city) => {
+                return {
+                  value: `${city.latitude} ${city.longitude}`,
+                  label: `${city.name}, ${city.countryCode}`,
+                };
+              }),
+            };
+          };
+
+          const onChangeHandler = (enteredData) => {
+            setSearchValue(enteredData);
+            onSearchChange(enteredData);
+          };
+        
+          return (
+            <AsyncPaginate
+              placeholder="Search for cities"
+              debounceTimeout={600}
+              value={searchValue}
+              onChange={onChangeHandler}
+              loadOptions={loadOptions}
+            />
+          );
+    }
+        
+    
+
+    return (
+        <div className="wrapper">
+            <div style={{ width: "1000px", paddingBottom: "300px" }}>
+                <div class="container" style={{ marginTop: "30px" }}>
+                    <table style={{ width: "1000px" }}>
+                    <caption> 
+                        <input type="text" placeholder="search" id="countryInput"></input>
+                        <button onClick={searchWeather}>Search</button>
+                    </caption>
+                        <div class="wrapper">
+                            <tr>
+                                <td >
+                                    <div class="img_section">
+                                        <div class="default_info">
+                                            <h2 class="default_day">Sunday</h2>
+                                            <span class="default_date">18 September 2023 </span>
+                                            <div class="icons">
+                                                <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="" id='condition_icon'/>
+                                                <h2 class="weather_temp">22°C</h2>
+                                                <h3 class="cloudtxt" id='condition'>Overcast Clouds</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="content_section">
+                                        <div class="day_info">
+                                            <tr className='rside'>
+                                                <div class="content">
+                                                    <p class="title">NAME</p>
+                                                    <span class="value">United Kingdom</span>
+                                                </div></tr>
+                                            <tr className='rside'>
+                                                <div class="content">
+                                                    <p class="title">TEMP</p>
+                                                    <span class="value" id='temperature'>23°C</span>
+                                                </div></tr><tr className='rside'>
+                                                <div class="content">
+                                                    <p class="title">HUMIDITY</p>
+                                                    <span class="value">2%</span>
+                                                </div></tr><tr className='rside'>
+                                                <div class="content">
+                                                    <p class="title">WIND SPEED</p>
+                                                    <span class="value">2.92 Km/h</span>
+                                                </div></tr>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+>>>>>>> Stashed changes
     );
 }
 
