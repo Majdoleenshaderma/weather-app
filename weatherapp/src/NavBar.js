@@ -22,6 +22,7 @@ function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate = useNavigate();
+
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -49,11 +50,6 @@ function NavBar() {
         navigate("/");
         setAnchorElUser(null);
     };
-    const handlehistoryMenu = (event) => {
-        navigate("/history");
-        setAnchorElUser(null);
-    };
-
 
     return (
         <>
@@ -176,9 +172,6 @@ function NavBar() {
                                 </MenuItem>
                                 <MenuItem onClick={handleLogoutUserMenu}>
                                     <Typography textAlign="center">Logout</Typography>
-                                </MenuItem>
-                                <MenuItem onClick={handlehistoryMenu}>
-                                    <Typography textAlign="center">history</Typography>
                                 </MenuItem>
                             </Menu>
                         </Box>

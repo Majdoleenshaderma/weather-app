@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Profile() {
+  const [userId, setUserId] = useState(null);
   const [userData, setUserData] = useState({
     username: '',
     email: '',
@@ -12,14 +13,18 @@ function Profile() {
   const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
-    axios.get('api/user')
-      .then(response => {
-        setUserData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching user details:', error);
-      });
-  }, []);
+    const userIdFromParams = window.location.pathname.split('/')[3];
+    setUserId(userIdFromParams);
+    if (userId) {
+      axios.get(`/profile/${userId}`)
+        .then(response => {
+          setUserData(response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching user details:', error);
+        });
+    }
+  }, [userId]); 
 
   const handleInputChange = (e) => {
     setUserData({
@@ -31,7 +36,7 @@ function Profile() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.put('api/user', userData)
+    axios.put(`/profile/${userId}`, userData)
       .then(response => {
         setEditMode(false);
       })
@@ -45,7 +50,7 @@ function Profile() {
       <div >
         {editMode ? (
           <div className="wrapper" >
-            <form >
+            <form onSubmit={handleSubmit}>
               <div className="login_box">
                 <div className="login-header">
                   <span>EditProfile</span>
@@ -53,9 +58,9 @@ function Profile() {
                 <div className="input_box">
                   <input type="text" id="user" class="input-field" name="username" value={userData.username} onChange={handleInputChange} placeholder='UserName' />
                   <input type="email" id="user" class="input-field" name="email" value={userData.email} onChange={handleInputChange} placeholder='Email' />
-                  <input type="text" id="user" class="input-field" name="city" value={userData.governorate} onChange={handleInputChange} placeholder='City' />
+                  <input type="text" id="user" class="input-field" name="city" value={userData.city} onChange={handleInputChange} placeholder='City' />
                   <input type="password" id="user" class="input-field" name="password" value={userData.password} onChange={handleInputChange} placeholder='Password' />
-                  <button className="input-submit" onClick={handleSubmit}>Save</button>
+                  <button className="input-submit">Save</button>
                 </div>
               </div>
             </form>
