@@ -8,7 +8,7 @@ import UTCDatetime from './components/Reusable/UTCDatetime';
 import LoadingBox from './components/Reusable/LoadingBox';
 import { ReactComponent as SplashIcon } from './assets/splash-icon.svg';
 import { ALL_DESCRIPTIONS } from './utilities/DateConstants';
-import {getWeekForecastWeather,} from './utilities/DataUtils';
+import { getWeekForecastWeather, } from './utilities/DataUtils';
 
 function App() {
     const [todayWeather, setTodayWeather] = useState(null);
@@ -81,7 +81,7 @@ function App() {
             <React.Fragment>
                 <Grid item xs={12} md={todayWeather ? 6 : 12}>
                     <Grid item xs={12}>
-                        <TodayWeather data={todayWeather}/>
+                        <TodayWeather data={todayWeather} />
                     </Grid>
                 </Grid>
                 <Grid item xs={12} md={6}>
